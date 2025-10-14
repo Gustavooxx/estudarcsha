@@ -1,0 +1,136 @@
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("=================");
+        Console.WriteLine("Programa do açai");
+        Console.WriteLine("=================");
+
+        Console.WriteLine("Quantos acai pequenos irar querer?");
+        int qtdP = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Quantos Medio:");
+        int qtdM = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Quantos Grande:");
+        int qtdG = int.Parse(Console.ReadLine());
+
+        int soma = (qtdP * 13) + (qtdM * 15) + (qtdG + 17);
+
+        Console.WriteLine($"Total dos acais é {soma}");
+
+    }
+}
+
+
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Programa da Parcela de Compras");
+
+        Console.WriteLine("Digite o valor total da compra");
+        double valorTotal = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Digite o valor de Desconto");
+        double valorDesconto = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Digite a quantidade de parcelas");
+        int quantidadeParcelas = int.Parse(Console.ReadLine());
+
+        double valorParcela = (valorTotal - valorDesconto) / quantidadeParcelas;
+
+        Console.WriteLine($"O valor de cada parcela é de: {valorParcela.ToString("C")}");
+    }
+}
+
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine("Programa Da Lanchonete do Frei");
+
+        Console.WriteLine("Digite quantos salgados voçê irar querer:");
+        int salgados = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Digite quantos bebidas voçê irar querer:");
+        int bebidas = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Digite quantos doces voçê irar querer:");
+        int doces = int.Parse(Console.ReadLine());
+
+        double total = (salgados * 4.00) + (bebidas * 3.50) + (doces * 2.50);
+
+        Console.WriteLine($"O total do seu pedido é {total}");
+    }
+}
+
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine("Programa Tempo de Ler o Livro");
+
+        Console.WriteLine("Informe quantos paginas tem o livro:");
+        int paginas = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Informe quantas paginas voce consegue ler por hora:");
+        int paginasPorHora = int.Parse(Console.ReadLine());
+
+        int horas = paginas / paginasPorHora;
+        Console.WriteLine($"Voce vai levar {horas} horas para ler o livro");
+    }
+}
+
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine("Programa da febre");
+
+        Console.WriteLine("Informe sua temperatura:");
+        double temp = Convert.ToDouble(Console.ReadLine());
+
+        bool SN = temp > 37.2;
+
+        Console.WriteLine($"Está com febre? {SN}");
+    }
+}
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine("Programa da febre");
+
+        Console.WriteLine("Informe sua temperatura:");
+        double temp = Convert.ToDouble(Console.ReadLine());
+
+        bool SN = temp > 37.2;
+
+        Console.WriteLine($"Está com febre? {SN}");
+    }
+}
+
+
+

@@ -1,0 +1,21 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# Build outputs
+*.dll
+*.exe
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
