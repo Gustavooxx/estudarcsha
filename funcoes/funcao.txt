@@ -289,3 +289,225 @@ class Program
 
     }
 }
+
+
+using System;
+using System.Globalization;
+
+namespace estudarcsha;
+
+class Program
+{
+
+
+    static void Main(string[] args)
+    {
+        Apresentacao();
+        Resu(pegarAltura(), pegarPeso());
+
+    }
+
+    public static void Apresentacao()
+    {
+        Console.WriteLine("PROGRAMA DO IMC");
+    }
+    public static double pegarPeso()
+    {
+        Console.WriteLine("Informe seu peso:");
+        double peso = Convert.ToDouble(Console.ReadLine());
+        return peso;
+
+    }
+    
+    public static double pegarAltura()
+    {
+        Console.WriteLine("Informe sua altura:");
+        double altura = Convert.ToDouble(Console.ReadLine());
+        return altura;
+    }
+
+    public static void Resu(double altura, double peso)
+    {
+        double imc = peso / (altura * altura);
+        Console.WriteLine($"Seu IMC é de {imc}");
+    }
+
+}
+
+
+
+using System;
+using System.Globalization;
+
+namespace estudarcsha;
+
+class Program
+{
+
+
+    static void Main(string[] args)
+    {
+       
+        Apresentacao();
+        string nome = nomeLivro();
+        double paginas = qtdPaginas();
+        int paginasPorSegundo = leituraPaginaPorSegundo();
+        Resu(nome, (int)paginas, paginasPorSegundo);
+
+    }
+
+    public static void Apresentacao()
+    {
+        Console.WriteLine("PROGRAMA DE LER O LIVRO");
+    }
+    public static string nomeLivro()
+    {
+        Console.WriteLine("Informe o nome do livro:");
+        string nome = Console.ReadLine();   
+        return nome;
+    }
+
+    public static double qtdPaginas()
+    {
+        Console.WriteLine("Informe quantas paginas tem o livro:");
+        double paginas = Convert.ToDouble(Console.ReadLine());
+        return paginas;
+    }
+    
+    public static int leituraPaginaPorSegundo()
+    {
+        Console.WriteLine("Informe a leitura de paginas por segundo:");
+        int paginas = Convert.ToInt32(Console.ReadLine());
+        return paginas;
+    }
+
+    public static void Resu(string nome, int paginas, int paginasPorSegundo)
+    {
+        int totalSegundos = paginas * paginasPorSegundo;
+        int horas = totalSegundos / 3600;
+        int minutos = (totalSegundos % 3600) / 60;
+        int segundos = totalSegundos % 60;
+        Console.WriteLine($"Voce lera o livro {nome} em {horas} horas, {minutos} minutos e {segundos} segundos para ler o livro");
+    }
+
+}
+
+
+
+
+using System;
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Apresentacao();
+        int capacidade = CapacidadeTanque();
+        double atual = QuantidadeAtual();
+        VerificarReabastecimento(capacidade, atual);
+    }
+
+    public static void Apresentacao()
+    {
+        Console.WriteLine("PROGRAMA DE VERIFICAÇÃO DE REABASTECIMENTO");
+    }
+
+    public static int CapacidadeTanque()
+    {
+        Console.WriteLine("Informe a capacidade do tanque (em litros):");
+        int capacidade = Convert.ToInt32(Console.ReadLine());
+        return capacidade;
+    }
+
+    public static double QuantidadeAtual()
+    {
+        Console.WriteLine("Informe a quantidade atual de combustível (em litros):");
+        double atual = Convert.ToDouble(Console.ReadLine());
+        return atual;
+    }
+
+    public static void VerificarReabastecimento(int capacidade, double atual)
+    {
+        double limite = capacidade / 4.0;
+        if (atual <= limite)
+        {
+            Console.WriteLine("É sugerido realizar o reabastecimento.");
+        }
+        else
+        {
+            Console.WriteLine("Não é necessário reabastecer ainda.");
+        }
+    }
+}
+
+
+
+
+
+using System;
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Apresentacao();
+        double diametro1 = DiametroCilindro1();
+        double altura1 = AlturaCilindro1();
+        double diametro2 = DiametroCilindro2();
+        double altura2 = AlturaCilindro2();
+        VerificarTransferencia(diametro1, altura1, diametro2, altura2);
+    }
+
+    public static void Apresentacao()
+    {
+        Console.WriteLine("PROGRAMA DE VERIFICAÇÃO DE TRANSFERÊNCIA DE VOLUME ENTRE CILINDROS");
+    }
+
+    public static double DiametroCilindro1()
+    {
+        Console.WriteLine("Informe o diâmetro do primeiro cilindro:");
+        double diametro = Convert.ToDouble(Console.ReadLine());
+        return diametro;
+    }
+
+    public static double AlturaCilindro1()
+    {
+        Console.WriteLine("Informe a altura do primeiro cilindro:");
+        double altura = Convert.ToDouble(Console.ReadLine());
+        return altura;
+    }
+
+    public static double DiametroCilindro2()
+    {
+        Console.WriteLine("Informe o diâmetro do segundo cilindro:");
+        double diametro = Convert.ToDouble(Console.ReadLine());
+        return diametro;
+    }
+
+    public static double AlturaCilindro2()
+    {
+        Console.WriteLine("Informe a altura do segundo cilindro:");
+        double altura = Convert.ToDouble(Console.ReadLine());
+        return altura;
+    }
+
+    public static double CalcularVolume(double diametro, double altura)
+    {
+        double raio = diametro / 2.0;
+        return Math.PI * raio * raio * altura;
+    }
+
+    public static void VerificarTransferencia(double diametro1, double altura1, double diametro2, double altura2)
+    {
+        double volume1 = CalcularVolume(diametro1, altura1);
+        double volume2 = CalcularVolume(diametro2, altura2);
+        Console.WriteLine($"O primeiro cilindro tem volume de {volume1}");
+        Console.WriteLine($"O segundo cilindro tem volume de {volume2}");
+        bool possivel = volume1 <= volume2;
+        Console.WriteLine($"É possível transferir o primeiro para o segundo? {possivel.ToString().ToLower()}");
+    }
+}
