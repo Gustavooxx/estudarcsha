@@ -154,3 +154,138 @@ class Program
 }
 
 
+using System;
+using System.Globalization;
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Apresentacao();
+
+        Console.WriteLine("Informe o primeiro lado do retangulo 1");
+        int lado1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Informe o SEGUNDO lado do retangulo 1");
+        int lado2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Informe o primeiro lado do retangulo 2");
+        int lado3 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Informe o SEGUNDO lado do retangulo 2");
+        int lado4 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine(Resu(lado1, lado2, lado3, lado4));
+    }
+
+    public static void Apresentacao()
+    {
+        Console.WriteLine("PROGRAMA DO RETANGULO");
+
+
+    }
+
+    public static string Resu(double nota1, double nota2, double nota3, double nota4)
+    {
+        double con = nota1 * nota2;
+        double con2 = nota2 * nota3;
+
+        bool v = con == con2;
+
+        string re = $"O primeiro retângulo possui área {con}\n" +
+                    $"O segundo retângulo possui área {con2}\n" +
+                    $"Eles são iguais? ({v})";
+
+        return re;
+
+    }
+}
+
+
+using System;
+using System.Globalization;
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Apresentacao();
+
+        int num = pegarNumero();
+
+        Console.WriteLine(Resu(num));
+    }   
+
+    public static void Apresentacao()
+    {
+        Console.WriteLine("PROGRAMA DO IMPAR E PAR");
+
+
+    }
+
+    public static int pegarNumero()
+    {
+        Console.WriteLine("informe um numero:");
+        int num = Convert.ToInt32(Console.ReadLine());
+        return num;
+    }
+
+    public static string Resu(int num)
+    {
+        bool v = num % 2 == 0;
+        string re = $"O numero é par? {v}";
+        return re;
+
+    }
+}
+
+
+
+
+using System;
+using System.Globalization;
+
+namespace estudarcsha;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Apresentacao();
+
+        string num = pegarNumero();
+
+        Console.WriteLine(Resu(num));
+    }   
+
+    public static void Apresentacao()
+    {
+        Console.WriteLine("PROGRAMA DO IMPAR E PAR");
+
+
+    }
+
+    public static string pegarNumero()
+    {
+        Console.WriteLine("Qual o persongem de Friends que trabalha com TI");
+        string num = Console.ReadLine();
+        return num;
+    }
+
+    public static string Resu(string nome)
+    {
+        string name = "chandler";
+        bool v = nome == name;
+
+        string re = $"Resposta correta? {v}";
+        return re;
+
+    }
+}
