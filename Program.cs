@@ -7,34 +7,37 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("PROGRAMA DO ALUNO");
 
-        Apresentacao();
+        Console.WriteLine("informe a primeira nota do aluno:");
+        double nota1 = Convert.ToDouble(Console.ReadLine());
 
-        string num = pegarSinal();
+         Console.WriteLine("informe a segunda nota do aluno:");
+        double nota2 = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine(Resu(num));
-    }   
+         Console.WriteLine("informe a terceira nota do aluno:");
+        double nota3 = Convert.ToDouble(Console.ReadLine());
 
-    public static void Apresentacao()
-    {
-        Console.WriteLine("PROGRAMA DO IMPAR E PAR");
+        double nota = (nota1 + nota2 + nota3) / 3;
+        string situ = Resu(nota1, nota2, nota3);
 
-
+        Console.WriteLine($"A nota do aluno é {nota}");
+        Console.WriteLine($"{situ}");
     }
 
-    public static string pegarSinal()
+    public static string Resu(double nota1, double nota2, double nota3)
     {
-        Console.WriteLine("informe um numero:");
-        string num = Console.ReadLine();
-        return num;
-    }
+        double nota = (nota1 + nota2 + nota3) / 3;
+        string passou = "";
 
-    public static string Resu(string sinal)
-    {
-        string sin = "verde";
-        bool v = sinal == sin;
-        string re = $"pode atravessar? {v}";
-        return re;
-
+        if (nota > 5)
+        {
+            passou = $"aluno passou";
+        }
+        else 
+        {
+            passou = $"aluno reprovou";
+        }
+        return passou;
     }
 }
